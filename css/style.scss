@@ -1,0 +1,92 @@
+// グローバルスタイル
+$base-font-family: "Times New Roman", Times, serif;
+$base-font-color: #f6f6f6;
+
+* {
+  margin: 0;
+  font-family: $base-font-family;
+  color: $base-font-color;
+}
+
+body {
+  background: url(../assets/images/gradation.webp);
+}
+
+// レイアウト
+.container-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.container-wrap section {
+  min-height: 100vh;
+  display: flex;
+  padding: 1rem 0;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+}
+
+// セクション内の要素
+.container-wrap section div:nth-of-type(1) {
+  flex-basis: 60%;
+}
+
+.container-wrap section div:nth-of-type(2) {
+  flex-basis: 40%;
+  padding: 1rem;
+}
+
+.container-wrap section div h1 {
+  font-size: 3.2rem;
+}
+
+.container-wrap section div p {
+  line-height: 1.75;
+}
+
+.container-wrap section div img {
+  display: block;
+  width: 100%;
+}
+
+// 偶数番目のセクション
+.container-wrap section:nth-child(even) {
+  flex-direction: row-reverse;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+}
+
+/*
+Layey
+*/
+
+.layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* レイヤーを最前面に */
+}
+
+.close-btn {
+  display: inline-block;
+  height: 4rem;
+  background-color: #673ab7;
+  padding: 15px 32px;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
